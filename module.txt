@@ -1,0 +1,9 @@
+{
+    "id" : "VolcanoTest",
+    "version" : "0.1.0-SNAPSHOT",
+    "author" : "",
+    "displayName" : "VolcanoTest",
+    "description" : "",
+    "dependencies" : [],
+    "serverSideOnly" : false
+}
