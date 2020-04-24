@@ -29,6 +29,7 @@ import org.terasology.world.generation.facets.SurfaceHeightFacet;
 public class SurfaceProvider implements FacetProvider {
     private Noise2D surfaceNoise;
     private static float mountainDims = 240f;
+    private static float mountainHeight = 120;
 
     @Override
     public void setSeed(long seed) {
@@ -45,7 +46,7 @@ public class SurfaceProvider implements FacetProvider {
         Rect2i processRegion = facet.getWorldRegion();
         for (BaseVector2i position : processRegion.contents()) {
             if( position.x()/mountainDims < 1f && position.x()/mountainDims >= 0f && position.y()/mountainDims < 1f && position.y()/mountainDims >= 0f )
-            facet.setWorld(position, 80 * surfaceNoise.noise(position.x()/mountainDims, position.y()/mountainDims));
+            facet.setWorld(position, mountainHeight * surfaceNoise.noise(position.x()/mountainDims, position.y()/mountainDims));
         }
 
         // Pass our newly created and populated facet to the region
